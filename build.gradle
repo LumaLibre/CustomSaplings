@@ -22,7 +22,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.21-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
     compileOnly "com.sk89q.worldedit:worldedit-bukkit:7.2.9"
     implementation "org.jetbrains:annotations:24.0.0"
 }

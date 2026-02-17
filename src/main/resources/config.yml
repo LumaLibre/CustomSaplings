@@ -28,6 +28,10 @@ verbose-logging: false
 # You should really be taking schematics of trees that have leaf decay already disabled.
 disable-leaf-decay: false
 
+# List of worlds where custom saplings are disabled and not placeable/growable.
+disabled-worlds:
+  - world_nether
+
 
 # example-rarity:
 #   material: PLAYER_HEAD

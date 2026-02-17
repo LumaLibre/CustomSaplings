@@ -58,6 +58,12 @@ public class Events implements Listener {
             return;
         }
 
+        if (plugin.getConfig().getStringList("disabled-worlds").contains(event.getBlockPlaced().getWorld().getName())) {
+            event.getPlayer().sendMessage(TextUtils.prefix + "You cannot place saplings in this world!");
+            event.setCancelled(true);
+            return;
+        }
+
 
         String sapling = item.getItemMeta().getPersistentDataContainer().get(new NamespacedKey(plugin, "sapling"), PersistentDataType.STRING);
         event.getBlockPlaced().setMetadata("sapling", new FixedMetadataValue(plugin, sapling));
@@ -66,6 +72,10 @@ public class Events implements Listener {
 
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onStructureGrow(StructureGrowEvent event) {
+        if (plugin.getConfig().getStringList("disabled-worlds").contains(event.getWorld().getName())) {
+            return; // Do not allow sapling growth in disabled worlds
+        }
+
         List<BlockState> blocks = event.getBlocks();
 
         for (BlockState blockState : blocks) {
