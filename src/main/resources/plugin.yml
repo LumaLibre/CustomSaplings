@@ -4,6 +4,7 @@ main: me.jsinco.customsaplings.CustomSaplings
 api-version: '1.20'
 author: Jsinco
 depend: [WorldEdit]
+folia-supported: true
 commands:
   customsaplings:
     description: Custom Saplings Command
